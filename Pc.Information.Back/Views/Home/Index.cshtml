@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewBag.Title = "咨询系统首页";
+    ViewBag.ShowBanner = "首页";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section css{
+    <link rel="stylesheet" href="http://c.csdnimg.cn/public/common/toolbar/css/index.css">
+    <link rel="stylesheet" href="http://c.csdnimg.cn/cdn/201502/css/font-awesome.min.css">
+    <link href="../../Content/Styles/Home/geek.css" rel="stylesheet" />
+    <link rel="stylesheet" href="http://geek.csdn.net/assets/css/comments.css" />
+}
+<div class="widget widget-body">
+    @Html.Raw(ViewBag.Html)
+</div>
+@section scripts{
+    <script language="javascript" type="text/javascript">
+        $(window).resize(function () {
+            $(".pd-20").css({
+                position: "absolute",
+                left: ($(window).width() - $(".pd-20").outerWidth()) / 2,
+                top: ($(window).height() - $(".pd-20").outerHeight()) / 2
+            });
+        });
+    </script>
+}
+

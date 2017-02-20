@@ -1,0 +1,82 @@
+﻿@charset "UTF-8";
+
+/**页面样式表
+ * created by zd 2016-08-05
+ * 
+ */
+
+
+/*redius*/
+
+.special_sta_table_s>tbody>tr>td {
+    vertical-align: middle;
+}
+
+.order_final_table_s>tbody>tr>td {
+    vertical-align: middle;
+}
+
+.time_slice_special>tbody>tr>td {
+    vertical-align: middle;
+}
+
+.order_final_table_s td.finx_s_table_td {
+    overflow: hidden;
+    padding: 0;
+    /*display:table-cell;*/
+}
+
+.order_final_table_s td.finx_s_table_td select.form-control {
+    display: table-cell;
+    /*width:70%;*/
+}
+
+.order_final_table_s td.finx_s_table_td input.form-control {
+    display: table-cell;
+    /*float:right;*/
+    /*width:30%;*/
+}
+
+.table.border_bot {
+    border-bottom: 1px solid #ddd;
+}
+
+.page-body .form-inline .form-control {
+    vertical-align: initial;
+}
+
+.page-body .btn {
+    vertical-align: initial;
+}
+
+.taskdrawpdown {
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.new {
+    width: 200px;
+    position: absolute;
+    border: 1px solid #b6ff00;
+    display: none;
+}
+
+#fileClassTypeList li {
+    line-height: 30px;
+    background-color: #D8D8D8;
+    margin-left: -40px;
+    list-style-type: none;
+    text-align: center;
+}
+
+#fileClassTypeList li:hover {
+    background: #5eb95e;
+    color: #FFF;
+}
+.minWidth-144 {
+    -moz-min-width: 144px;
+    -ms-min-width: 144px;
+    -o-min-width: 144px;
+    -webkit-min-width: 144px;
+    min-width: 144px;
+}
