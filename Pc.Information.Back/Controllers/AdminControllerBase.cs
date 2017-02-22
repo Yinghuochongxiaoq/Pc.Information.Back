@@ -40,10 +40,9 @@ namespace Pc.Information.Back.Controllers
                 var model = JsonConvert.DeserializeObject<PiFUsersModel>(data);
                 if (model != null)
                 {
-                    //return AccountService.GetUserInfo(model);
-                    return new PiFUsersModel();
+                    return model;
                 }
-                return null;
+                return new PiFUsersModel();
             }
         }
 
@@ -109,6 +108,7 @@ namespace Pc.Information.Back.Controllers
         private void InitializeStaticResource()
         {
             ViewBag.RootNode = ConfigHelp.GetConfigValueForNull("ReferenceKey.RootNode") ?? string.Empty;
+            ViewBag.CurrentModel = CurrentModel;
         }
 
         /// <summary>

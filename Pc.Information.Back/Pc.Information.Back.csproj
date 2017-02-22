@@ -77,6 +77,10 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -140,9 +144,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
-    </Reference>
     <Reference Include="EntityFramework">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -715,7 +716,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="UEditor\net\Bin\" />
-    <Folder Include="Views\AdminControllerBase\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -725,6 +725,10 @@
     <ProjectReference Include="..\..\WagesSystemManager\FreshMan.Common\FreshMan.Common.csproj">
       <Project>{9c60e14a-4e51-43b6-a325-39c9b1eb6c5f}</Project>
       <Name>FreshMan.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Pc.Information.Business\Pc.Information.Business.csproj">
+      <Project>{505ED355-9E4E-4640-843F-212ED507F09F}</Project>
+      <Name>Pc.Information.Business</Name>
     </ProjectReference>
     <ProjectReference Include="..\Pc.Information.Model\Pc.Information.Model.csproj">
       <Project>{c59a7811-e20e-4def-9394-9fca7bcf3864}</Project>

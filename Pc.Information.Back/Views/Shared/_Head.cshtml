@@ -67,14 +67,14 @@
                                 </div>
                                 <section>
                                     <h2>
-                                        <span class="profile"><span>字符串</span></span>
+                                        <span class="profile"><span>@(ViewBag.CurrentModel.PiFUserName +""+ ViewBag.CurrentModel.PiFJob)</span></span>
                                     </h2>
                                 </section>
                             </a>
                             <!--Login Area Dropdown-->
                             <ul class="minWidth-144 pull-right dropdown-menu dropdown-arrow dropdown-login-area">
-                                <li class="username"><a>用户名</a></li>
-                                <li class="email"><a>工号</a></li>
+                                <li class="username"><a>@(ViewBag.CurrentModel.PiFUserName)</a></li>
+                                <li class="email"><a>@(ViewBag.CurrentModel.PiFEmailAddress)</a></li>
                                 <!--Avatar Area-->
                                 <li>
                                     <div class="avatar-area">
@@ -125,7 +125,7 @@
                                 </li>
                                 <!--/Theme Selector Area-->
                                 <li class="dropdown-footer">
-                                    <a href="#">
+                                    <a href="@Url.Action("LogOut","Account")">
                                         退出登录
                                     </a>
                                 </li>

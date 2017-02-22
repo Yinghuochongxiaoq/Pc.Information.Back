@@ -5,7 +5,7 @@ using Pc.Information.Model;
 
 namespace Pc.Information.Back.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : AdminControllerBase
     {
         /// <summary>
         /// Home page.
