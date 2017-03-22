@@ -2,34 +2,36 @@
 //======================================================================
 //Copyright(C) FreshMan.All right reserved.
 //命名空间：Pc.Information.Business
-//文件名称：LoginBll
+//文件名称：QuestionBll
 //创 建 人：FreshMan
-//创建日期：2017/2/22 15:30:45
+//创建日期：2017/3/22 20:52:11
 //用    途：记录类的用途
 //======================================================================
 #endregion
-
+using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using FreshMan.Common;
 using Pc.Information.Model;
 
 namespace Pc.Information.Business
 {
     /// <summary>
-    /// login business class
+    /// Question info bll
     /// </summary>
-    public class LoginBll : BusinessBaseBll
+    public class QuestionBll : BusinessBaseBll
     {
         /// <summary>
-        /// User login
+        /// Add question info.
         /// </summary>
-        /// <param name="userName">user name</param>
-        /// <param name="password">password</param>
         /// <returns></returns>
-        public PiFUsersModel Login(string userName, string password)
+        public DataBaseModel AddQuestion(PiFQuestionInfoModel newQuestionInfo)
         {
-            var paramsDic = new Dictionary<string, object> { { "userName", userName }, { "password", password } };
-            var requestKey = "LoginApi";
-            var resultModel = GetDataApiByKey<PiFUsersModel>(requestKey, paramsDic, true);
+            var paramsDic = EntityConvertHelper.EntityToDictionary(newQuestionInfo);
+            var requestKey = "AddQuestionInfo";
+            var resultModel = GetDataApiByKey<DataBaseModel>(requestKey, paramsDic, true);
             return resultModel;
         }
     }

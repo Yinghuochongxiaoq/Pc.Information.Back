@@ -29,12 +29,15 @@ namespace Pc.Information.Business
         /// <typeparam name="T">data type</typeparam>
         /// <param name="requestUrl">request url</param>
         /// <param name="paramsDic">params dictionary</param>
+        /// <param name="isPost">is post way get data</param>
         /// <returns>Api data,if error return default T</returns>
-        public T GetDataApi<T>(string requestUrl, IDictionary<string, string> paramsDic = null)
+        public T GetDataApi<T>(string requestUrl, IDictionary<string, object> paramsDic = null, bool isPost = false)
         {
             try
             {
-                var resultStr = WebCommonHelper.CreatePostHttpResponse(requestUrl, paramsDic, 16000, null, Encoding.UTF8);
+                var resultStr = isPost
+                    ? WebCommonHelper.CreatePostHttpResponse(requestUrl, paramsDic, 16000, null, Encoding.UTF8)
+                    : WebCommonHelper.HttpGetWebRequest(requestUrl);
                 if (string.IsNullOrEmpty(resultStr)) return default(T);
                 var resultModel = JsonConvert.DeserializeObject<ApiResultModel<T>>(resultStr);
                 if (resultModel == null) return default(T);
@@ -52,12 +55,13 @@ namespace Pc.Information.Business
         /// <typeparam name="T">data type</typeparam>
         /// <param name="key">request url config key</param>
         /// <param name="paramsDic">params dictionary</param>
+        /// <param name="isPost">is post way get data.</param>
         /// <returns>Api data,if error return default T</returns>
-        public T GetDataApiByKey<T>(string key, IDictionary<string, string> paramsDic = null)
+        public T GetDataApiByKey<T>(string key, IDictionary<string, object> paramsDic = null, bool isPost = false)
         {
             string requestUrl = GetRequestUrlByKey(key);
             if (string.IsNullOrEmpty(requestUrl)) return default(T);
-            return GetDataApi<T>(requestUrl, paramsDic);
+            return GetDataApi<T>(requestUrl, paramsDic, isPost);
         }
 
         /// <summary>
@@ -70,7 +74,8 @@ namespace Pc.Information.Business
         /// </summary>
         private readonly IDictionary<string, string> _apiRequstionUrlDictionary = new Dictionary<string, string>
         {
-            { "LoginApi", BaseRequestUrl+ "/LoginUser/Login" }
+            { "LoginApi", BaseRequestUrl+ "/LoginUser/Login" },
+            {"AddQuestionInfo",BaseRequestUrl+"/Question/AddQuestionInfo" }
         };
 
         /// <summary>

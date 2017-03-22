@@ -376,6 +376,7 @@
     <Content Include="Content\Scripts\My97DatePicker\skin\whyGreen\img.gif" />
     <Content Include="Content\Scripts\My97DatePicker\WdatePicker.js" />
     <Content Include="Content\Scripts\PagerView.js" />
+    <Content Include="Content\Scripts\Question\QuestionInfo.js" />
     <Content Include="Content\Scripts\supersized.3.2.7.min.js" />
     <Content Include="Content\Styles\Home\geek.css" />
     <Content Include="Content\Styles\PagerStyle.css" />

@@ -15,30 +15,22 @@
         <div>
             <p class="form-inline">
                 *分享主题：
-                <input id="shareTheme" type="text" name="shareTheme" placeholder="输入分享主题" style="-moz-min-width: 150px; -ms-min-width: 150px; -o-min-width: 150px; -webkit-min-width: 150px; min-width: 150px; width: 80%;" class="form-control input-sm" value="Model.TSTTitle" />
+                <input id="shareTheme" type="text" name="shareTheme" placeholder="输入主题" style="-moz-min-width: 150px; -ms-min-width: 150px; -o-min-width: 150px; -webkit-min-width: 150px; min-width: 150px; width: 80%;" class="form-control input-sm" value="Model.TSTTitle" />
             </p>
             <p class="form-inline">
-                *分享时间：
-                <input type="text" onfocus="WdatePicker({ dateFmt: 'yyyy-MM-dd', maxDate: '%y-%M-%d' })" id="shearTime" class="form-control input-sm" style="min-width: 165px; width: 50%;" name="shearTime" value="" placeholder="输入分享时间">
+                *添加时间：
+                <input type="text" onfocus="WdatePicker({ dateFmt: 'yyyy-MM-dd', maxDate: '%y-%M-%d' })" id="shearTime" class="form-control input-sm" style="min-width: 165px; width: 50%;" name="shearTime" value="" placeholder="输入添加时间">
                 <label>
                     <input id="shareIsValide" type="checkbox" name="shareIsValide" value="0" />
                     <span class="text"></span>
                 </label>
-            </p>
-            <p class="form-inline">
-                &nbsp;&nbsp;资料地址：
-                <input id="shareFileUrl" type="text" name="shareFileUrl" placeholder="输入资料地址" style="-moz-min-width: 150px; -ms-min-width: 150px; -o-min-width: 150px; -webkit-min-width: 150px; min-width: 150px; width: 80%;" class="form-control input-sm" value="Model.TSTUrl" />
             </p>
             <p>
                 *分享内容：
                 <script id="shareContent" name="shareContent" type="text/plain" style="width: 100%; height: 300px;">
                 </script>
             </p>
-            <p class="form-inline">
-                我要拉票：
-                <input id="shareRemark" type="text" name="shareRemark" placeholder="输入拉票宣言" style="-moz-min-width: 150px; -ms-min-width: 150px; -o-min-width: 150px; -webkit-min-width: 150px; min-width: 150px; width: 80%;" class="form-control input-sm" value="Model.TSTDeclaration" />
-            </p>
-            <input class="btn btn-success btn-sm ml-20 mt-20 mb-20" type="button" onclick="AddShareInfo();" value="提交晨会分享记录" />
+            <input class="btn btn-success btn-sm ml-20 mt-20 mb-20" type="button" onclick="javascript:AddQuestionInfo();" value="提交问题记录" />
         </div>
     </div>
 </div>
@@ -48,8 +40,7 @@
     <script src="../../Content/Scripts/My97DatePicker/WdatePicker.js"></script>
     <!--UEditor编辑器-->
     <script type="text/javascript" charset="utf-8" src="../../UEditor/ueditor.config.js"></script>
-    <script type="text/javascript" charset="utf-8" src="../../UEditor/ueditor.all.min.js">
-    </script>
+    <script type="text/javascript" charset="utf-8" src="../../UEditor/ueditor.all.min.js"></script>
     <script>
         //实例化编辑器
         //建议使用工厂方法getEditor创建和引用编辑器实例，如果在某个闭包下引用该编辑器，直接调用UE.getEditor('editor')就能拿到相关的实例
@@ -79,4 +70,5 @@
             }
         });
     </script>
+    <script src="../../Content/Scripts/Question/QuestionInfo.js"></script>
 }
